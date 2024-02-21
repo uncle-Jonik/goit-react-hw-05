@@ -6,7 +6,7 @@ import { MoviesList } from '../components/MoviesList';
 export default function MoviesPage() {
   const [value, setValue] = useState('');
   const [data, setData] = useState([]);
-  const [error, setError] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (value === '') {

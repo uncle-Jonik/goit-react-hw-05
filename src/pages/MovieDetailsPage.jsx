@@ -23,11 +23,13 @@ export default function MovieDetailsPage() {
     }
     fechData();
 
-    return () => {
-      controller.abort();
-    };
+    // return () => {
+    //   controller.abort();
+    // };
   }, [movieId]);
 
+  //   Виклик дата
+  console.log(data);
   return (
     <>
       {error && <b>opps</b>}
