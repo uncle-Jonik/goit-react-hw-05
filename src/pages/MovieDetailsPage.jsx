@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react';
-import { Outlet, useParams } from 'react-router-dom';
+import { Suspense, useEffect, useRef, useState } from 'react';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { trendingMoviesById } from '../api';
 import { MovieDetails } from '../components/MovieDetails';
 import { Navigation } from '../components/Navigation/Navigation';
 
 export default function MovieDetailsPage() {
+  const location = useLocation();
+  const backLink = useRef(location.state);
   const [data, setData] = useState(null);
   const [error, setError] = useState(false);
   const { movieId } = useParams();
@@ -29,6 +31,8 @@ export default function MovieDetailsPage() {
     <>
       {error && <b>opps</b>}
 
+      <Link to={backLink.current ?? '/'}>Back</Link>
+
       <div>
         {data && (
           <MovieDetails
@@ -51,7 +55,9 @@ export default function MovieDetailsPage() {
       </div>
 
       <div>
-        <Outlet />
+        <Suspense fallback={<b>Loading subpage...</b>}>
+          <Outlet />
+        </Suspense>
       </div>
     </>
   );

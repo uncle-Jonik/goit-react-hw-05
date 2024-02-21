@@ -28,7 +28,7 @@ export default function MovieReviews() {
     <>
       {error && <b>opps</b>}
 
-      {data && <ReviewsList list={data} />}
+      {data && data.length > 0 ? <ReviewsList list={data} /> : <p>nothing</p>}
     </>
   );
 }
