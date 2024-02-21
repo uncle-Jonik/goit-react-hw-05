@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import { trendingMoviesById } from '../api';
 import { MovieDetails } from '../components/MovieDetails';
+import { Navigation } from '../components/Navigation/Navigation';
 
 export default function MovieDetailsPage() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [error, setError] = useState(false);
   const { movieId } = useParams();
 
@@ -22,26 +23,36 @@ export default function MovieDetailsPage() {
       }
     }
     fechData();
-
-    // return () => {
-    //   controller.abort();
-    // };
   }, [movieId]);
 
-  //   Виклик дата
-  console.log(data);
   return (
     <>
       {error && <b>opps</b>}
 
-      <MovieDetails
-        title={data.title}
-        img={data.poster_path}
-        average={data.vote_average}
-        count={data.vote_count}
-        overview={data.overview}
-        genres={data.genres}
-      />
+      <div>
+        {data && (
+          <MovieDetails
+            title={data.title}
+            img={data.poster_path}
+            average={data.vote_average}
+            count={data.vote_count}
+            overview={data.overview}
+            genres={data.genres}
+          />
+        )}
+      </div>
+
+      <div>
+        <Navigation
+          linkFirst="Cast"
+          linkSecond="Reviews"
+          href={{ linkFirst: 'cast', linkSecond: 'reviews' }}
+        />
+      </div>
+
+      <div>
+        <Outlet />
+      </div>
     </>
   );
 }
