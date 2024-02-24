@@ -1,0 +1,36 @@
+.movieListBox {
+  padding: 0 50px;
+  margin: 50px 0;
+}
+.movieList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 20px;
+}
+.movieList > li {
+  width: 200px;
+  border: 1px solid #212121;
+  padding: 10px;
+
+  transition: all 250ms ease;
+}
+.movieList > li:hover {
+  transform: scale(1.02, 1.02);
+}
+.movieLink {
+  color: #212121;
+  text-decoration: none;
+}
+.movieLink > img {
+  border: 1px solid #212121;
+}
+.movieLink > h2 {
+  margin-top: 5px;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #212121;
+}

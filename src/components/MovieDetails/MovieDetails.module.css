@@ -1,0 +1,31 @@
+.movieDetailsWrapper {
+  display: flex;
+  gap: 40px;
+  padding: 50px;
+}
+.movieDetailsWrapper > img {
+  border: solid 1px #212121;
+  max-width: 300px;
+  max-height: 400px;
+}
+.information {
+  border: solid 1px #212121;
+  padding: 10px;
+}
+.subpageLink {
+  display: flex;
+  gap: 20px;
+}
+.link {
+  color: #212121;
+  text-decoration: none;
+  padding: 10px;
+  border: #212121 1px solid;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.active {
+  text-decoration: underline;
+  color: #433bff;
+}

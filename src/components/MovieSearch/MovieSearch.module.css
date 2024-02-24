@@ -1,0 +1,25 @@
+.movieForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.movieForm > input {
+  padding: 7px;
+  border: solid 1px #212121;
+  color: #212121;
+}
+.movieForm > input::placeholder {
+  text-align: center;
+}
+.movieForm > button {
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background-color: transparent;
+  border: solid 1px #212121;
+  color: #212121;
+  cursor: pointer;
+}

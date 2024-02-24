@@ -1,25 +1,32 @@
+import { Link, NavLink } from 'react-router-dom';
+import { RiMovie2Line } from 'react-icons/ri';
 import clsx from 'clsx';
 import css from './Navigation.module.css';
-import { NavLink } from 'react-router-dom';
 
-export const Navigation = ({ linkFirst, linkSecond, href }) => {
-  const buildLinkClass = ({ isActive }) => {
-    return clsx(css.link, isActive && css.active);
-  };
+const buildLinkClass = ({ isActive }) => {
+  return clsx(css.link, isActive && css.active);
+};
+
+export const Navigation = () => {
   return (
-    <nav className={css.navigation}>
-      <ul>
-        <li>
-          <NavLink to={href.linkFirst} className={buildLinkClass}>
-            {linkFirst}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={href.linkSecond} className={buildLinkClass}>
-            {linkSecond}
-          </NavLink>
-        </li>
-      </ul>
-    </nav>
+    <>
+      <nav className={css.navigationWrapper}>
+        <Link to="/">
+          <RiMovie2Line /> Movie search
+        </Link>
+        <ul className={css.navigationList}>
+          <li>
+            <NavLink to="/" className={buildLinkClass}>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/movies" className={buildLinkClass}>
+              Movies
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </>
   );
 };

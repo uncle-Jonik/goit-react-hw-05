@@ -1,0 +1,8 @@
+.backLink {
+  padding: 50px;
+  color: #212121;
+  text-decoration: none;
+}
+.backLink:hover {
+  text-decoration: underline;
+}

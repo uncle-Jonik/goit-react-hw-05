@@ -1,0 +1,32 @@
+.castWrapper {
+  padding: 0 50px;
+}
+.castList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 20px;
+}
+.castList > li {
+  width: 200px;
+  border: 1px solid #212121;
+  padding: 10px;
+
+  transition: all 250ms ease;
+}
+.movieList > li:hover {
+  transform: scale(1.02, 1.02);
+}
+.castList img {
+  border: 1px solid #212121;
+}
+.castList div {
+  border: 1px solid #212121;
+  margin-top: 5px;
+}
+.castList div > h3 {
+  font-size: 20px;
+}
+.castList div > p {
+  font-size: small;
+}

@@ -1,6 +1,34 @@
-.navigation {
-  margin-bottom: 35px;
+.navigationWrapper {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
-.active {
-  color: red;
+.navigationWrapper > a {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #433bff;
+  border: #212121 1px solid;
+  text-decoration: underline;
+}
+
+.navigationList {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.navigationList a {
+  padding: 10px;
+  text-decoration: none;
+  color: #212121;
+  border: #212121 1px solid;
+}
+.navigationList a:hover {
+  text-decoration: underline;
+}
+.navigationList a.active {
+  text-decoration: underline;
+  color: #433bff;
 }

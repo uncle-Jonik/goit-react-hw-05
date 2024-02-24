@@ -1,0 +1,27 @@
+.errorWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+}
+.errorWrapper > svg {
+  width: 350px;
+  height: 350px;
+  color: #212121;
+  margin-bottom: 35px;
+}
+.errorWrapper > p {
+  color: #212121;
+  letter-spacing: 0.3em;
+  line-height: 0.8em;
+}
+.code {
+  font-size: 150px;
+}
+.errorWrapper > a {
+  margin-top: 35px;
+  color: #433bff;
+}
